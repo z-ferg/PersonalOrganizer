@@ -7,9 +7,12 @@ from helper_funcs import get_date
 
 sys.path.append('calendar')
 sys.path.append('home')
+sys.path.append('pomodoro')
 
 from calendar_frame import CalendarApp
 from home_frame import TempHomeApp
+from pomo_frame import PomodoroFrame
+
 
 class Dashboard(customtkinter.CTk):
     def __init__(self):
@@ -52,6 +55,14 @@ class Dashboard(customtkinter.CTk):
         )
         self.calendar_button.grid(row=2, column=0, padx=20, pady=10)
 
+        # ========= POMODORO WORK =========
+        self.pomo_button = customtkinter.CTkButton(
+            self.sidebar_frame,
+            text="Pomodoro",
+            command=self.show_pomo
+        )
+        self.pomo_button.grid(row=3, column=0, padx=20, pady=10)
+
         # ========= MAIN CONTAINER =========
         self.container = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.container.grid(row=0, column=1, sticky="nsew")
@@ -69,6 +80,10 @@ class Dashboard(customtkinter.CTk):
         self.frames["Calendar"] = CalendarApp(parent=self.container)
         self.frames["Calendar"].grid(row=0, column=0, sticky="nsew")
 
+        # Create the pomodoro frame
+        self.frames["Pomodoro"] = PomodoroFrame(parent=self.container)
+        self.frames["Pomodoro"].grid(row=0, column=0, sticky="nsew")
+
         self.show_home()
 
     
@@ -80,3 +95,8 @@ class Dashboard(customtkinter.CTk):
     def show_calendar(self):
         """Raise the calendar frame to the top of the main container."""
         self.frames["Calendar"].tkraise()
+    
+    
+    def show_pomo(self):
+        """Raise the pomodoro frame to the top of the main container."""
+        self.frames["Pomodoro"].tkraise()

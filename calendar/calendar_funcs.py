@@ -52,7 +52,6 @@ def get_next_events(calendar, num_events=10):
     cal_id = get_all_calendars()[calendar]
 
     now = datetime.datetime.now(tz=datetime.timezone.utc).isoformat()
-    print("Getting the upcoming 10 events")
     events_result = (
         service.events()
         .list(
@@ -67,14 +66,12 @@ def get_next_events(calendar, num_events=10):
     events = events_result.get("items", [])
 
     if not events:
-        print("No upcoming events found.")
-        return
+        return []
 
-    for event in events:
-        start = event["start"].get("dateTime", event["start"].get("date"))
-        print(start, event["summary"])
+    important_keys = ['summary', 'start', 'end', 'organizer']
+    return [{key: event[key] for key in important_keys if key in event} for event in events]
 
 
 if __name__ == "__main__":
     print(get_all_calendars(True))
-    get_next_events("Virginia Tech")
+    print(get_next_events("Virginia Tech"))

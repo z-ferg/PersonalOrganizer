@@ -17,6 +17,7 @@ class CalendarApp(ctk.CTkFrame):
         # Fetch the events
         all_cals = get_all_calendars(name_only=True)
         
+        
         self.events = [
             {"date": datetime.now(), "time": "10:00", "title": "Team Meeting", "duration": 60},
             {"date": datetime.now(), "time": "14:30", "title": "Project Review", "duration": 90},
