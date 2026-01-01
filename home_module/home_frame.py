@@ -49,7 +49,7 @@ class TempHomeApp(ctk.CTkFrame):
 
     def setup_music(self):
         music = ctk.CTkFrame(self.content_frame, corner_radius=10,
-                                   border_color="gray", border_width=2)
+                                border_color="gray", border_width=2)
         music.grid(row=0, column=3, sticky="nsew", padx=(5, 0), pady=(0, 5))
         
         music_widget = MusicWidget(music)
@@ -58,7 +58,7 @@ class TempHomeApp(ctk.CTkFrame):
 
     def setup_habit_tracker(self):
         blank = ctk.CTkFrame(self.content_frame, corner_radius=10,
-                                   border_color="gray", border_width=2)
+                                border_color="gray", border_width=2)
         blank.grid(row=1, column=1, sticky="nsew", rowspan=2, columnspan=2, padx=5, pady=(5, 0))
         
         label = ctk.CTkLabel(blank, text="Habit Tracker", 

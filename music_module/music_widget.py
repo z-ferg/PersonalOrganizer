@@ -22,21 +22,21 @@ class MusicWidget(ctk.CTkFrame):
 
         # Media Controls
         back_skip = ctk.CTkButton(self.content_frame, corner_radius=10, text="⏮",
-                                  border_width=0)
+                                    border_width=1, fg_color="transparent")
         back_skip.grid(row=5, column=1, sticky="nsew", padx=10)
 
         front_skip = ctk.CTkButton(self.content_frame, corner_radius=10, text="⏭",
-                                   border_width=0)
+                                    border_width=1, fg_color="transparent")
         front_skip.grid(row=5, column=3, sticky="nsew", padx=10)
 
         self.state = {}
 
         self.state["Pause"] = ctk.CTkButton(self.content_frame, corner_radius=10, text="⏸",
-                                            border_width=0, command=self.pause_music)
+                                            border_width=1, fg_color="transparent", command=self.pause_music)
         self.state["Pause"].grid(row=5, column=2, sticky="nsew", padx=10)
 
         self.state["Play"] = ctk.CTkButton(self.content_frame, corner_radius=10, text="▶︎",
-                                           border_width=0, command=self.play_music)
+                                            border_width=1, fg_color="transparent", command=self.play_music)
         self.state["Play"].grid(row=5, column=2, sticky="nsew", padx=10)
     
     def pause_music(self):
