@@ -1,5 +1,5 @@
 .env
 
-calendar/credentials.json
-calendar/token.json
-calendar/calendar_tokens.json
+calendar_module/credentials.json
+calendar_module/token.json
+calendar_module/calendar_tokens.json
