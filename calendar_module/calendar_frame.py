@@ -2,7 +2,7 @@ import customtkinter as ctk
 from datetime import datetime, timedelta
 import calendar
 
-from calendar_funcs import get_all_calendars, get_next_events
+from calendar_module.calendar_funcs import get_all_calendars, get_next_events
 
 class CalendarApp(ctk.CTkFrame):
     def __init__(self, parent=None):

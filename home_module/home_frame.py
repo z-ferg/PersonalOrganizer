@@ -1,4 +1,7 @@
 import customtkinter as ctk
+import sys
+
+from music_module.music_widget import MusicWidget
 
 class TempHomeApp(ctk.CTkFrame):
     def __init__(self, parent=None):
@@ -49,9 +52,8 @@ class TempHomeApp(ctk.CTkFrame):
                                    border_color="gray", border_width=2)
         music.grid(row=0, column=3, sticky="nsew", padx=(5, 0), pady=(0, 5))
         
-        label = ctk.CTkLabel(music, text="Music", 
-                            font=ctk.CTkFont(size=18, weight="bold"))
-        label.pack(expand=True)
+        music_widget = MusicWidget(music)
+        music_widget.pack(expand=True)
 
 
     def setup_habit_tracker(self):

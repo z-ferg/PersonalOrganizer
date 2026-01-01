@@ -5,13 +5,9 @@ import sys
 
 from helper_funcs import get_date
 
-sys.path.append('calendar')
-sys.path.append('home')
-sys.path.append('pomodoro')
-
-from calendar_frame import CalendarApp
-from home_frame import TempHomeApp
-from pomo_frame import PomodoroFrame
+from calendar_module.calendar_frame import CalendarApp
+from home_module.home_frame import TempHomeApp
+from pomodoro_module.pomo_frame import PomodoroFrame
 
 
 class Dashboard(customtkinter.CTk):
