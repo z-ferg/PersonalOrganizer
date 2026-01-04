@@ -2,8 +2,9 @@ import customtkinter as ctk
 import sys
 
 from music_module.music_widget import MusicWidget
+from home_module.tasks_widget import TaskWidget
 
-class TempHomeApp(ctk.CTkFrame):
+class HomeFrame(ctk.CTkFrame):
     def __init__(self, parent=None):
         super().__init__(parent)
 
@@ -29,17 +30,16 @@ class TempHomeApp(ctk.CTkFrame):
     
     def setup_daily_tasks(self):
         daily_tasks = ctk.CTkFrame(self.content_frame, corner_radius=10,
-                                   border_color="gray", border_width=2)
+                                    border_color="gray", border_width=2)
         daily_tasks.grid(row=0, column=0, rowspan=3, sticky="nsew", padx=(0, 10))
         
-        label = ctk.CTkLabel(daily_tasks, text="Daily Tasks", 
-                            font=ctk.CTkFont(size=20, weight="bold"))
-        label.pack(pady=20, padx=20)
+        task_widget = TaskWidget(daily_tasks)
+        task_widget.pack(pady=20, padx=20)
 
 
     def setup_weather(self):
         weather = ctk.CTkFrame(self.content_frame, corner_radius=10,
-                                   border_color="gray", border_width=2)
+                                    border_color="gray", border_width=2)
         weather.grid(row=0, column=1, sticky="nsew", columnspan=2, padx=5, pady=(0, 5))
         
         label = ctk.CTkLabel(weather, text="Weather", 
@@ -68,7 +68,7 @@ class TempHomeApp(ctk.CTkFrame):
 
     def setup_projects(self):
         projects = ctk.CTkFrame(self.content_frame, corner_radius=10,
-                                   border_color="gray", border_width=2)
+                                    border_color="gray", border_width=2)
         projects.grid(row=1, column=3, sticky="nsew", rowspan=2, padx=(5, 0), pady=(5, 0))
         
         label = ctk.CTkLabel(projects, text="Projects", 

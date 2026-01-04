@@ -4,7 +4,7 @@ import calendar
 
 from calendar_module.calendar_funcs import get_all_calendars, get_next_events
 
-class CalendarApp(ctk.CTkFrame):
+class CalendarFrame(ctk.CTkFrame):
     def __init__(self, parent=None):
         super().__init__(parent)
         label = ctk.CTkLabel(self, text="Calendar Page!")
